@@ -11,3 +11,16 @@ def now():
 
 
 now()
+
+def logFunctionName(thename):
+	def theNameWrapper(*args,**kw):
+		print "call %s():" %thename.__name__
+		print "I am going to print the name of the value! %s():" % thename.__name__
+		return thename(*args,**kw)
+	return theNameWrapper
+
+@logFunctionName
+def hello():
+	print "Hello,World!"
+
+hello()
