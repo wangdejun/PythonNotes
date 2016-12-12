@@ -52,9 +52,6 @@ print("2,after the =: ",getrefcount(a))
 b = a
 print("3,after another = ",getrefcount(b))
 
-
-
-
 x = [1, 2, 3]
 y = [x, dict(key1=x)]
 z = [y, (x, y)]
