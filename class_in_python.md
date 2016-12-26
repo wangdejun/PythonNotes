@@ -1,7 +1,9 @@
 https://learnpythonthehardway.org/book/ex40.html
 
+Exercise 40: Modules, Classes, and Objects
+Python is called an "object-oriented programming language." This means there is a construct in Python called a class that lets you structure your software in a particular way. Using classes, you can add consistency to your programs so that they can be used in a cleaner way. At least that's the theory.
 Python被称为面向对象语言，一种特殊的方式来构建你的软件，至少是这个理论
-
+I am now going to teach you the beginnings of object-oriented programming, classes, and objects using what you already know about dictionaries and modules. My problem is that Object-Oriented Programming (OOP) is just plain weird. You have to struggle with this, try to understand what I say here, type in the code, and in the next exercise I'll hammer it in.
 用你已经知道的字典和模块来教你面向对象的初步,即类和对象
 
 
@@ -16,20 +18,10 @@ Python被称为面向对象语言，一种特殊的方式来构建你的软件�
 * 假设我有一个
 
 
-Exercise 40: Modules, Classes, and Objects
-
-Python is called an "object-oriented programming language." This means there is a construct in Python called a class that lets you structure your software in a particular way. Using classes, you can add consistency to your programs so that they can be used in a cleaner way. At least that's the theory.
-
-I am now going to teach you the beginnings of object-oriented programming, classes, and objects using what you already know about dictionaries and modules. My problem is that Object-Oriented Programming (OOP) is just plain weird. You have to struggle with this, try to understand what I say here, type in the code, and in the next exercise I'll hammer it in.
-
-Here we go.
-
 Modules Are Like Dictionaries
 
 You know how a dictionary is created and used and that it is a way to map one thing to another. That means if you have a dictionary with a key "apple" and you want to get it then you do this:
 
-1
-2
 mystuff = {'apple': "I AM APPLES!"}
 print mystuff['apple']
 Keep this idea of "get X from Y" in your head, and now think about modules. You've made a few so far, and you should know they are:
@@ -39,25 +31,16 @@ You import that file.
 And you can access the functions or variables in that module with the . (dot) operator.
 Imagine I have a module that I decide to name mystuff.py and I put a function in it called apple. Here's the module mystuff.py:
 
-1
-2
-3
 # this goes in mystuff.py
 def apple():
     print "I AM APPLES!"
 Once I have this code, I can use the module MyStuff with import and then access the apple function:
 
-1
-2
+
 import mystuff
 mystuff.apple()
 I could also put a variable in it named tangerine:
 
-1
-2
-3
-4
-5
 def apple():
     print "I AM APPLES!"
 
@@ -65,19 +48,12 @@ def apple():
 tangerine = "Living reflection of a dream"
 I can access that the same way:
 
-1
-2
-3
-4
 import mystuff
 
 mystuff.apple()
 print mystuff.tangerine
 Refer back to the dictionary, and you should start to see how this is similar to using a dictionary, but the syntax is different. Let's compare:
 
-1
-2
-3
 mystuff['apple'] # get apple from dict
 mystuff.apple() # get apple from the module
 mystuff.tangerine # same thing, it's just a variable
@@ -93,15 +69,7 @@ You can think about a module as a specialized dictionary that can store Python c
 
 If I were to create a class just like the mystuff module, I'd do something like this:
 
-1
-2
-3
-4
-5
-6
-7
 class MyStuff(object):
-
     def __init__(self):
         self.tangerine = "And now a thousand years between"
 
@@ -119,9 +87,6 @@ If a class is like a "mini-module," then there has to be a similar concept to im
 
 You instantiate (create) a class by calling the class like it's a function, like this:
 
-1
-2
-3
 thing = MyStuff()
 thing.apple()
 print thing.tangerine
@@ -164,10 +129,8 @@ You should start seeing the similarities in these three key=value container type
 
 
 class Song(object):
-
     def __init__(self, lyrics):
         self.lyrics = lyrics
-
     def sing_me_a_song(self):
         for line in self.lyrics:
             print line
