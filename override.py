@@ -1,0 +1,15 @@
+class Car():
+    def exclaim(self):
+        print ("I'm a Car!")
+
+class Yugo():
+    def exclaim(self):
+        print ("I'm Yugo,Much like a car,but more Yugo-ish!")
+
+
+give_me_a_car = Car()
+give_me_a_yugo = Yugo()
+
+give_me_a_car.exclaim()
+give_me_a_yugo.exclaim()
+
