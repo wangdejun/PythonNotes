@@ -10,7 +10,7 @@ class Employee:
       self.salary = salary
       Employee.empCount += 1
    
-   def displayCount(self):
+     def displayCount(self):
      print "Total Employee %d" % Employee.empCount
 
    def displayEmployee(self):
@@ -21,7 +21,6 @@ class Employee:
 emp1 = Employee("Zara", 2000)
 "创建 Employee 类的第二个对象"
 emp2 = Employee("Manni", 5000)
-
 
 emp1.displayEmployee()
 emp2.displayEmployee()
