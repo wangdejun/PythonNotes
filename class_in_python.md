@@ -6,7 +6,7 @@ https://learnpythonthehardway.org/book/ex40.html
     * I am now going to teach you the beginnings of object-oriented programming, classes, and objects using what you already know about dictionaries and modules. My problem is that Object-Oriented Programming (OOP) is just plain weird. You have to struggle with this, try to understand what I say here, type in the code, and in the next exercise I'll hammer it in.
     * 用你已经知道的字典和模块来教你面向对象的初步,即类和对象
 
-模块就像字典
+### 模块就像字典
 * 字典就是用某种方式把一个东西映射称为另一个东西，比如你有一个键为apple的字典你这样做
     * mystuff = {'apple': "I AM APPLES!"}
     * print mystuff['apple']    
@@ -17,7 +17,7 @@ https://learnpythonthehardway.org/book/ex40.html
 * 假设我有一个
 
 
-Modules Are Like Dictionaries
+### Modules Are Like Dictionaries
 
 You know how a dictionary is created and used and that it is a way to map one thing to another. That means if you have a dictionary with a key "apple" and you want to get it then you do this:
 
@@ -35,7 +35,7 @@ def apple():
     print "I AM APPLES!"
 Once I have this code, I can use the module MyStuff with import and then access the apple function:
 
-
+```
 import mystuff
 mystuff.apple()
 I could also put a variable in it named tangerine:
@@ -45,12 +45,15 @@ def apple():
 
 # this is just a variable
 tangerine = "Living reflection of a dream"
-I can access that the same way:
+```
 
+I can access that the same way:
+```
 import mystuff
 
 mystuff.apple()
 print mystuff.tangerine
+```
 Refer back to the dictionary, and you should start to see how this is similar to using a dictionary, but the syntax is different. Let's compare:
 
 mystuff['apple'] # get apple from dict
@@ -85,10 +88,11 @@ Objects are Like Import
 If a class is like a "mini-module," then there has to be a similar concept to import but for classes. That concept is called "instantiate", which is just a fancy, obnoxious, overly smart way to say "create." When you instantiate a class what you get is called an object.
 
 You instantiate (create) a class by calling the class like it's a function, like this:
-
+```
 thing = MyStuff()
 thing.apple()
 print thing.tangerine
+```
 The first line is the "instantiate" operation, and it's a lot like calling a function. However, Python coordinates a sequence of events for you behind the scenes. I'll go through these steps using the above code for MyStuff:
 
 Python looks for MyStuff() and sees that it is a class you've defined.
@@ -112,11 +116,14 @@ I now have three ways to get things from things:
 
 
 # dict style
+```
 mystuff['apples']
-
+```
 # module style
+```
 mystuff.apples()
 print mystuff.tangerine
+```
 
 # class style
 thing = MyStuff()
@@ -126,7 +133,7 @@ A First Class Example
 
 You should start seeing the similarities in these three key=value container types and probably have a bunch of questions. Hang on with the questions, as the next exercise will hammer home your "object-oriented vocabulary." In this exercise, I just want you to type in this code and get it working so that you have some experience before moving on.
 
-
+```
 class Song(object):
     def __init__(self, lyrics):
         self.lyrics = lyrics
@@ -144,6 +151,7 @@ bulls_on_parade = Song(["They rally around tha family",
 happy_bday.sing_me_a_song()
 
 bulls_on_parade.sing_me_a_song()
+```
 What You Should See
 
 $ python ex40.py
@@ -154,11 +162,11 @@ They rally around tha family
 With pockets full of shells
 Study Drills
 
-Write some more songs using this and make sure you understand that you're passing a list of strings as the lyrics.
+* Write some more songs using this and make sure you understand that you're passing a list of strings as the lyrics.
 Put the lyrics in a separate variable, then pass that variable to the class to use instead.
 See if you can hack on this and make it do more things. Don't worry if you have no idea how, just give it a try, see what happens. Break it, trash it, thrash it, you can't hurt it.
 Search online for "object-oriented programming" and try to overflow your brain with what you read. Don't worry if it makes absolutely no sense to you. Half of that stuff makes no sense to me too.
 Common Student Questions
 
-Why do I need self when I make __init__ or other functions for classes?
+* Why do I need self when I make __init__ or other functions for classes?
 If you don't have self, then code like cheese = 'Frank' is ambiguous. That code isn't clear about whether you mean the instance's cheese attribute, or a local variable named cheese. With self.cheese = 'Frank' it's very clear you mean the instance attribute self.cheese.
