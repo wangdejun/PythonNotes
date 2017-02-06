@@ -6,9 +6,17 @@
 #     print(list(A.gen))
 
 
+# class A(object):
+#     x = 1
+#     gen = (A.x for _ in xrange(10))
+
+# if __name__ == "__main__":
+#     print(list(A.gen))
+
+
+
 class A(object):
     x = 1
-    gen = (A.x for _ in xrange(10))
+    gen = (A.x for _ in range(10))
 
-if __name__ == "__main__":
-    print(list(A.gen))
+print (list(A.gen))
