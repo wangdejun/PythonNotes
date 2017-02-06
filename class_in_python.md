@@ -1,13 +1,12 @@
 https://learnpythonthehardway.org/book/ex40.html
 
-Exercise 40: Modules, Classes, and Objects
-Python is called an "object-oriented programming language." This means there is a construct in Python called a class that lets you structure your software in a particular way. Using classes, you can add consistency to your programs so that they can be used in a cleaner way. At least that's the theory.
-Python被称为面向对象语言，一种特殊的方式来构建你的软件，至少是这个理论
-I am now going to teach you the beginnings of object-oriented programming, classes, and objects using what you already know about dictionaries and modules. My problem is that Object-Oriented Programming (OOP) is just plain weird. You have to struggle with this, try to understand what I say here, type in the code, and in the next exercise I'll hammer it in.
-用你已经知道的字典和模块来教你面向对象的初步,即类和对象
+* Exercise 40: Modules, Classes, and Objects
+    * Python is called an "object-oriented programming language." This means there is a construct in Python called a class that lets you structure your software in a particular way. Using classes, you can add consistency to your programs so that they can be used in a cleaner way. At least that's the theory.
+    * Python被称为面向对象语言，一种特殊的方式来构建你的软件，至少是这个理论
+    * I am now going to teach you the beginnings of object-oriented programming, classes, and objects using what you already know about dictionaries and modules. My problem is that Object-Oriented Programming (OOP) is just plain weird. You have to struggle with this, try to understand what I say here, type in the code, and in the next exercise I'll hammer it in.
+    * 用你已经知道的字典和模块来教你面向对象的初步,即类和对象
 
-
-###模块就像字典
+模块就像字典
 * 字典就是用某种方式把一个东西映射称为另一个东西，比如你有一个键为apple的字典你这样做
     * mystuff = {'apple': "I AM APPLES!"}
     * print mystuff['apple']    

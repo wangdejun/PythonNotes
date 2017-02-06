@@ -1,9 +1,6 @@
-__author__ = 'bozeng'
-
 from collections import deque
 # this implements the basic operation of an AVL balanced binary search tree
 from random import sample
-
 
 class treeNode:
     def __init__(self,val):
@@ -12,28 +9,21 @@ class treeNode:
         self.right=None
         self.height=0
 
-
 class AVLTree:
-
     def __init__(self):
         self.root=None
-
 
     def __height(self,node):
         if not node:
             return -1
-
         else:
             return node.height
 
     def __rotateRootLeft(self,root):
         # recalculate heights after rotation
-
         assert type(root) is treeNode, "can only rotate treeNode objects"
-
         if not root:
             return
-
         if not root.left:
             return
 
@@ -41,47 +31,33 @@ class AVLTree:
         temp=newroot.right
         root.left=temp
         newroot.right=root
-
         root.height=1+max(self.__height(root.left),self.__height(root.right))
         newroot.height=1+max(self.__height(newroot.left),self.__height(newroot.right))
-
         return newroot
-
 
     def __rotateRootRight(self,root):
         # recalculate heights after rotation
-
         assert type(root) is treeNode, "can only rotate treeNode objects"
         if not root:
             return
-
         if not root.right:
             return
-
         newroot=root.right
         temp=newroot.left
         root.right=temp
         newroot.left=root
-
         root.height=1+max(self.__height(root.left),self.__height(root.right))
         newroot.height=1+max(self.__height(newroot.left),self.__height(newroot.right))
-
+        
         return newroot
 
-
     def __rightmost(self,node):
-
-
         current=node
-
         if not current:
             return None
-
         while current.right:
             current=current.right
-
         return current
-
 
     def __voilate(self,node):
         if not node:
@@ -93,10 +69,8 @@ class AVLTree:
         if self.__height(node.left)>self.__height(node.right):
             if node.left and self.__height(node.left.left)>=self.__height(node.left.right):
                         # left-left case, rotate left.
-
                 newnode=self.__rotateRootLeft(node)
                 return newnode
-
             elif node.left and self.__height(node.left.right)>self.__height(node.left.left):
                         # zag-zig
 
@@ -110,7 +84,6 @@ class AVLTree:
         else:
             if node.right and self.__height(node.right.right)>=self.__height(node.right.left):
                         # left-left case, rotate left.
-
                 newnode=self.__rotateRootRight(node)
                 return newnode
 
@@ -147,7 +120,6 @@ class AVLTree:
 
             if self.__voilate(node):
                 return self.__rotate(node) # do rotations. 4 cases:
-
 
             node.height=1+max(self.__height(node.left),self.__height(node.right))
 
@@ -189,16 +161,11 @@ class AVLTree:
                 # do rotations. 4 cases:
                 return self.__rotate(node) # do rotations. 4 cases:
 
-
-
             node.height=1+max(self.__height(node.left),self.__height(node.right))
 
             return node
 
         self.root=recursiveDelete(self.root,val)
-
-
-
 
     def find(self,val):
         if not self.root:
