@@ -19,5 +19,3 @@ class Bird:
 eagleLord = Bird(5)
 for i in range(3):
     eagleLord.display()
-
-
