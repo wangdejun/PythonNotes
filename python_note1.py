@@ -1,0 +1,1 @@
+   tran = request.GET.get('tran', False) == '1'

@@ -1,8 +1,8 @@
-class bird(object):
+class Bird(object):
     feather = True
-class chicken(bird):
+class Chicken(Bird): 
     fly = False
-    def __init__(self,age):
+    def __init__(self, age):
         self.age = age
     def getAdult(self):
         if self.age > 1.0:
@@ -11,7 +11,8 @@ class chicken(bird):
             return False
     adult = property(getAdult)
 
-summer = chicken(2)
+
+summer = Chicken(2)
 print(summer.adult)
 summer.age = 0.5
 print(summer.adult)
@@ -29,7 +30,6 @@ class num(object):
     neg = property(getNeg,setNeg,delNeg,"I'm negative")
 
 x = num(1.1)
-
 print(x.neg)
 x.neg = -22
 print(x.value)
